@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-12@$+p=yyjs(l9fy80%92^d5+r_-8z6!bs=m0b(azc1!p!(q*j
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['servicenettoyage.onrender.com']
+ALLOWED_HOSTS = ["web-production-634b.up.railway.app"]
 
 
 # Application definition

@@ -5,7 +5,7 @@ from .models import MessageContact
 
 def home_view(request):
     return render(request, "home.html", {
-        "title": "Bienvenue sur notre service de nettoyage",
+        "title": "Bienvenue sur notre site de service du nettoyage",
         "description": "Professionnels du nettoyage d'appartements, bureaux et commerces."
     })
 

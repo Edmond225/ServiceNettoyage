@@ -1,12 +1,8 @@
+{% extends 'base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Demande de devis</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
-<body>
+
+   {% block content %}
 
 <div class="form-container">
     <h1>Demande de devis</h1>
@@ -23,5 +19,4 @@
 
 </div>
 
-</body>
-</html>
+  {% endblock %}

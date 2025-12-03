@@ -1,15 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
 from .forms import DemandeDevisForm
 from .models import MessageContact
 
-def home_view(request):
+def home(request):
     return render(request, "home.html", {
         "title": "Bienvenue sur notre site de service du nettoyage",
         "description": "Professionnels du nettoyage d'appartements, bureaux et commerces."
     })
 
-def contact_view(request):
+def servicenettoyage(request):
     success = False
     if request.method == "POST":
         nom = request.POST.get("nom")
@@ -19,7 +19,7 @@ def contact_view(request):
         success = True
     return render(request, "servicenettoyage.html", {"success": success})
 
-def detail_service_view(request):
+def detail(request):
     # Tu peux ajouter ici des informations dynamiques si besoin
     context = {
         "title": "Détails du service",
@@ -104,7 +104,7 @@ Un service flexible et efficace au meilleur rapport qualité/prix....""",
     }
     return render(request, "detail.html", context)
 
-def about_view(request):
+def about(request):
     context = {
         "title": "À propos de nous",
         "description": """
@@ -121,7 +121,7 @@ Choisir SNA Service, c’est choisir la propreté, la tranquillité et un servic
         "image": "store/images/img_net_2.jpg"
     }
     return render(request, "about.html", context)
-def demande_devis_view(request):
+def demande_devis(request):
     success = False
     if request.method == "POST":
         form = DemandeDevisForm(request.POST)

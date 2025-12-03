@@ -1,10 +1,16 @@
 from django.urls import path
-from .views import contact_view, detail_service_view, home_view, about_view, demande_devis_view
+from . import views
+from django.contrib import admin
 
 urlpatterns = [
-    path("", home_view, name="home"),
-    path("servicenettoyage/", contact_view, name="servicenettoyage"),
-    path("detail/", detail_service_view, name="detail"),
-    path("about/", about_view, name="about"),
-    path("demande-devis/", demande_devis_view, name="demande_devis"),
+    path('admin/', admin.site.urls),
+
+    # Racine du site → page d'accueil
+    path('', views.home, name='home'),
+
+    # Autres pages si nécessaire
+    path('about/', views.about, name='about'),
+    path('demande_devis/', views.demande_devis, name='demande_devis'),
+    path('detail/', views.detail, name='detail'),
+    path('servicenettoyage/', views.servicenettoyage, name='servicenettoyage'),
 ]
